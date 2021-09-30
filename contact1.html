@@ -7,7 +7,7 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     <!-- import the webpage's client-side javascript file -->
-    <script src="/client.js" defer></script>
+    <!--script src="/contacts1.js" defer></script-->
   </head>
   
   <body>
@@ -17,9 +17,14 @@
 
     <main>
       <form>
-        <input name="message" type="text" maxlength="100" placeholder="Type your email address here..." >
-        <button type="submit" id="submit-data">Submit Data</button>
+        <input id="email" type="text" maxlength="100" placeholder="Type your email address here..." >
+        <!--button type="submit" id="submit-data">Submit Data</button-->
+        <button onclick="saveContacts()"> Submit Data</button>
       </form>
     </main>
   </body>
 </html>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.0/firebase.js"></script>
+<script src="contact1.js"></script>
+
