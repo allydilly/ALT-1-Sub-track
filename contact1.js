@@ -1,3 +1,5 @@
+console.log('Contacts log');
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyC-NkVmpZwqRtQAo4U0z2-yrd8YnA3CcvQ",
@@ -10,7 +12,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 
 var myDBConn = firebase.database().ref('/contacts');
@@ -38,13 +41,13 @@ function saveContacts() {
   console.log(emailFieldValue);
   
   // reset form 
-  emailField.value = ''; // clear the field
+  emailField.value = 'xyz'; // clear the field
   emailField.focus();
   
   // package up the data to post to the server
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
   var data = myDBConn.push();
-  data.set({email: firstNameFieldValue
+  data.set({email: emailFieldValue
             }
           );
 
