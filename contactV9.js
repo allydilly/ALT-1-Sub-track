@@ -48,16 +48,27 @@ function saveContacts9() {
   console.log(emailFieldValue);
   
   // reset form 
-  emailField.value = 'xyz'; // clear the field
+  emailField.value = ''; // clear the field
   emailField.focus();
   
   // package up the data to post to the server
+  const dataObj = {email: emailFieldValue
+                };
+  
+  
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
   const dbCxn = getDatabase();
-  var data = dbCxn.push();
-  data.set({email: emailFieldValue
-            }
-          );
+  const newPostKey = push(child(ref(dbCxn), "posts")).key;
+  
+  const updates = {};
+  
+  //Set up path to write
+  updates["/contacts" + newPostKey] = dataObj;
+  return update(ref(dbCxn), updates);
+
+  
+  //  var data = dbCxn.push();
+  //  data.set( {email: emailFieldValue} );
 
   console.log("Contacts SAVED!!!");
 }
