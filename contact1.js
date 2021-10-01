@@ -25,12 +25,14 @@ console.log('Contacts log');
 
 // retrieve the data from the database and display it
 // getData();
-//const btn = document.getElementById("submit-data");
-//btn.addEventListener("click", submitData);
+const btn = document.getElementById("submit-data");
+btn.addEventListener("click", saveDetails);
+
+const rowList = document.getElementById('rows');
 
 
 // Submit clicked so post the data to the server
-function saveContacts() {
+function saveDetails() {
   // stop our form submission from refreshing the page
   console.log("SUBMIT clicked!!!");
   
@@ -41,7 +43,7 @@ function saveContacts() {
   console.log(emailFieldValue);
   
   // reset form 
-  emailField.value = 'xyz'; // clear the field
+  emailField.value = ''; // clear the field
   emailField.focus();
   
   // package up the data to post to the server
@@ -51,5 +53,31 @@ function saveContacts() {
             }
           );
 
+  
+  displayRow(emailFieldValue);
+  
   console.log("Contacts SAVED!!!");
+}
+
+function displayRow(value) {
+  const newListItem = document.createElement('li');
+  newListItem.innerHTML = value;
+  
+  // the next line prevents the page from being refreshed
+  event.preventDefault();   
+  
+  //var btn = document.createElement("button");
+  //btn.innerHTML = "DELETE";
+  //btn.id = value; // let the value be the id of the button
+  //btn.addEventListener('click', deleteEventHandler, false);
+  //newListItem.appendChild(btn);
+  
+  rowList.appendChild(newListItem);
+}
+
+myDBConn.on("child_added", insertData);
+
+function insertData(data, prevChildKey) {
+    var datapoint = data.val();
+    document.getElementById("results").value += datapoint.fname + "\t\t\t"+ datapoint.sname + "\n";
 }
