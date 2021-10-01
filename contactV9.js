@@ -1,7 +1,7 @@
 console.log('Contact V9 log');
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,6 +20,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 
+    import {
+      getDatabase,
+      ref,
+      set,
+      child,
+      push,
+      update
+    } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js";
+
+
 // retrieve the data from the database and display it
 // getData();
 //const btn = document.getElementById("submit-data");
@@ -27,9 +37,9 @@ const app = initializeApp(firebaseConfig);
 
 
 // Submit clicked so post the data to the server
-function saveContacts() {
+function saveContacts9() {
   // stop our form submission from refreshing the page
-  console.log("SUBMIT clicked!!!");
+  console.log("SUBMIT V9 clicked!!!");
   
   // define variables that reference elements on our page
   //const rowList = document.getElementById('rows');
