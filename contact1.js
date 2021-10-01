@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 var myDBConn = firebase.database().ref('/contacts');
-
+myDBConn.on("child_added", insertData);
 
 // client-side js
 // run by the browser each time your view template referencing it is loaded
@@ -27,9 +27,6 @@ console.log('Contacts log');
 // getData();
 const btn = document.getElementById("submit-data");
 btn.addEventListener("click", saveDetails);
-
-const rowList = document.getElementById('rows');
-
 
 // Submit clicked so post the data to the server
 function saveDetails() {
@@ -54,7 +51,7 @@ function saveDetails() {
           );
 
   
-  displayRow(emailFieldValue);
+  //displayRow(emailFieldValue);
   
   console.log("Contacts SAVED!!!");
 }
@@ -66,18 +63,28 @@ function displayRow(value) {
   // the next line prevents the page from being refreshed
   event.preventDefault();   
   
-  //var btn = document.createElement("button");
-  //btn.innerHTML = "DELETE";
-  //btn.id = value; // let the value be the id of the button
-  //btn.addEventListener('click', deleteEventHandler, false);
-  //newListItem.appendChild(btn);
-  
+  const rowList = document.getElementById('rows');
   rowList.appendChild(newListItem);
 }
 
-myDBConn.on("child_added", insertData);
-
 function insertData(data, prevChildKey) {
+
+    var datapoint = data.val();
+  
+    const newListItem = document.createElement('li');
+    newListItem.innerHTML = datapoint.email;
+    
+    // the next line prevents the page from being refreshed
+    //event.preventDefault();   
+
+    const rowList = document.getElementById('rows');
+    rowList.appendChild(newListItem);  
+  
+  
+    //document.getElementById("results").value += datapoint.fname + "\t\t\t"+ datapoint.sname + "\n";
+}
+
+function insertData2(data, prevChildKey) {
     var datapoint = data.val();
     document.getElementById("results").value += datapoint.fname + "\t\t\t"+ datapoint.sname + "\n";
 }
