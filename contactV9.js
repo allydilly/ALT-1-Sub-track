@@ -52,8 +52,7 @@ function saveContacts9() {
   emailField.focus();
   
   // package up the data to post to the server
-  const dataObj = {email: emailFieldValue
-                };
+  const dataObj = {email: emailFieldValue};
   
   
   // JUST USE THESE LINES AS THEY ARE - NO NEED TO CHANGE
