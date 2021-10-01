@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 var myDBConn = firebase.database().ref('/contacts');
-myDBConn.on("child_added", insertData);
+myDBConn.on("child_added", displayData);
 
 // client-side js
 // run by the browser each time your view template referencing it is loaded
@@ -56,18 +56,8 @@ function saveDetails() {
   console.log("Contacts SAVED!!!");
 }
 
-function displayRow(value) {
-  const newListItem = document.createElement('li');
-  newListItem.innerHTML = value;
-  
-  // the next line prevents the page from being refreshed
-  event.preventDefault();   
-  
-  const rowList = document.getElementById('rows');
-  rowList.appendChild(newListItem);
-}
 
-function insertData(data, prevChildKey) {
+function displayData(data, prevChildKey) {
 
     var datapoint = data.val();
   
