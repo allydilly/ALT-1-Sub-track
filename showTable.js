@@ -46,7 +46,8 @@ function tabulateData(data, prevChildKey) {
     let tableRow = table.insertRow();
 
     let cell0 = tableRow.insertCell(0);
-    cell0.innerHTML = ;
+      var datapoint = data.val();
+    cell0.innerHTML = datapoint.email;
 
 //   }); 
 }
