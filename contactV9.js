@@ -32,9 +32,9 @@ const app = initializeApp(firebaseConfig);
 
 // retrieve the data from the database and display it
 // getData();
-//const btn = document.getElementById("submit-data");
-//btn.addEventListener("click", submitData);
-
+const btn = document.getElementById("submit-data");
+btn.addEventListener("click", saveContacts9);
+console.log('Contact V9 log hello hello hello?');
 
 // Submit clicked so post the data to the server
 function saveContacts9() {
