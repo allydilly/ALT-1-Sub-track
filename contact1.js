@@ -19,17 +19,13 @@ firebase.initializeApp(firebaseConfig);
 var myDBConn = firebase.database().ref('/contacts');
 myDBConn.on("child_added", displayData);
 
-// client-side js
-// run by the browser each time your view template referencing it is loaded
-console.log('Contacts log');
 
-// retrieve the data from the database and display it
-// getData();
+// Tell JavaScript to call saveDetails when SUBMIT button is clicked
 const btn = document.getElementById("submit-data");
-btn.addEventListener("click", saveDetails);
+btn.addEventListener("click", saveContacts);
 
 // Submit clicked so post the data to the server
-function saveDetails() {
+function saveContacts() {
   // stop our form submission from refreshing the page
   console.log("SUBMIT clicked!!!");
   
