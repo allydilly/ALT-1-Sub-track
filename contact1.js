@@ -65,9 +65,7 @@ function displayData(data, prevChildKey) {
 
     const rowList = document.getElementById('rows');
     rowList.appendChild(newListItem);  
-  
-  
-    //document.getElementById("results").value += datapoint.fname + "\t\t\t"+ datapoint.sname + "\n";
+
 }
 
 function insertData2(data, prevChildKey) {
