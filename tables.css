@@ -1,0 +1,34 @@
+/* Style sheet for use with tables */
+
+table {
+  margin: auto;
+  border: 5px solid #000066;
+  width 600px;
+}
+
+td, th {
+  border: 1px solid #000066;
+  padding: 0.5em;
+  font-family: Arial, sans-serif;
+}
+
+/* copied from https://www.geeksforgeeks.org/how-to-fix-the-width-of-columns-in-the-table/ */
+/*
+table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    height: 100%;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #00cf45;
+}
+*/
