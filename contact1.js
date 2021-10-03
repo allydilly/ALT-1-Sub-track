@@ -20,7 +20,7 @@ var myDBConn = firebase.database().ref('/contacts');
 myDBConn.on("child_added", displayData);
 
 
-// Tell JavaScript to call saveDetails when SUBMIT button is clicked
+// Tell JavaScript to call saveContacts when SUBMIT button is clicked
 const btn = document.getElementById("submit-data");
 btn.addEventListener("click", saveContacts);
 
