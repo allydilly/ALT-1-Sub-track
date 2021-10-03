@@ -5,91 +5,93 @@
     <meta charset="utf-8">
     <title>My Contacts Page (Version 2)</title>
 
-    <link rel="stylesheet" href="/contact2.css">
+    <link rel="stylesheet" href="contact2.css">
 
   </head>
 
   <body>
-<div id="wrapper">
-  <header>
-    <h1>This is my contacts page</h1>
-  </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact1.html">Contact Us (v1)</a></li>
-        <li><a href="showTable.html">Show Contacts</a></li>
-      </ul>
-    </nav>
-    <main> 
-    <p>The <a href="#postal_address">snail mail address</a> can be found at the bottom of this page.</p>
-      <form>
-        <div class="tableRow">
-          <p>First Name:</p>
-          <p><input id="firstname" type="text" maxlength="50" size="20"></p>
-        </div>
-        
-        <div class="tableRow">
-          <p>Surname:</p>
-          <p><input id="surname" type="text" maxlength="50" size="20"></p>
-        </div>
+    <div id="wrapper">
+      <header>
+        <h1>A more sophisticated looking contacts page</h1>
+      </header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact1.html">Contact Us (v1)</a></li>
+            <li><a href="contact2-show.html">Show Contacts</a></li>
+          </ul>
+        </nav>
+        <main> 
+          <p>The <a href="#postal_address">snail mail address</a> can be found at the bottom of this page.</p>
+            <form>
+              <div class="tableRow">
+                <p>First Name:</p>
+                <p><input id="firstname" type="text" maxlength="50" size="20"></p>
+              </div>
 
-        <div class="tableRow">
-          <p>Email:</p>
-          <p><input id="email" type="text" maxlength="50" size="20"><br></p>
-        </div>
-        
-        <div class="tableRow">
-          <p>Newsletter:</p>
-          <p><input id="news" type="checkbox">Sign up for newsletter</p>
-        </div>
-        
-        <div class="tableRow">
-          <p>County</p>
-          <p>
-            <select id="county">
-              <option value="carlow">Carlow</option>
-              <option value="cavan">Cavan</option>
-              <option value="clare">Clare</option>
-              <option value="cork">Cork</option>
-              <option value="donegal">Donegal</option>
-              <option value="dublin">Dublin</option>
-              <option value="galway">Galway</option>
-              <option value="kerry">Kerry</option>
-              <option value="wexford">Wexford</option>
-              <option value="wicklow">Wicklow</option>
-            </select>
-          </p>
-        </div>
-        
-        <div class="tableRow">
-          <p>
-            <fieldset>
-              <legend>Gender</legend>
-              <input type="radio" name="gender" value="male" id="male" checked> Male<br>
-              <input type="radio" name="gender" value="female"> Female<br>
-              <input type="radio" name="gender" value="other"> Other
-            </fieldset>
-          </p>
-        </div>
+              <div class="tableRow">
+                <p>Surname:</p>
+                <p><input id="surname" type="text" maxlength="50" size="20"></p>
+              </div>
 
-        <div class="tableRow">
-          <p></p>
-          <!--button onclick="saveContacts()"> Submit Data</button-->
-          <button type="submit" id="submit-data">Submit Data</button>
-        </div>
-      </form>
+              <div class="tableRow">
+                <p>Email:</p>
+                <p><input id="email" type="text" maxlength="50" size="20"><br></p>
+              </div>
 
-    <h2 id="postal_address"></h2>
+              <div class="tableRow">
+                <p>Newsletter:</p>
+                <p><input id="news" type="checkbox">Sign up for newsletter</p>
+              </div>
 
-    <address>52 Business street<br>
-    Very important town<br>
-    Co. Westmeath<br>
-    IRE, T19 H654</address>
-    </main>
-    <footer>Copyright &copy; 2021
-    </footer>
-</div>
+              <div class="tableRow">
+                <p>County</p>
+                <p>
+                  <select id="county">
+                    <option value="carlow">Carlow</option>
+                    <option value="cavan">Cavan</option>
+                    <option value="clare">Clare</option>
+                    <option value="cork">Cork</option>
+                    <option value="donegal">Donegal</option>
+                    <option value="dublin">Dublin</option>
+                    <option value="galway">Galway</option>
+                    <option value="kerry">Kerry</option>
+                    <option value="wexford">Wexford</option>
+                    <option value="wicklow">Wicklow</option>
+                  </select>
+                </p>
+              </div>
+
+              <div class="tableRow">
+                <p>
+                  <fieldset>
+                    <legend>Gender</legend>
+                    <input type="radio" name="gender" value="male" id="male" checked> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <input type="radio" name="gender" value="other"> Other
+                  </fieldset>
+                </p>
+              </div>
+
+              <div class="tableRow">
+                <p></p>
+                <!--button onclick="saveContacts()"> Submit Data</button-->
+                <button type="submit" id="submit-data">Submit Data</button>
+              </div>
+            </form>
+
+          <h2 id="postal_address"></h2>
+
+          <address>52 Business Street<br>
+                  Very Important Town<br>
+                  Co. Westmeath<br>
+                  IRE, T19 H654
+          </address>
+        </main>
+    
+        <footer>Copyright &copy; 2021</footer>
+    
+    </div>
 
   </body>
 </html>
