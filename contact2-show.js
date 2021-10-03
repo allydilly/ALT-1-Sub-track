@@ -21,7 +21,7 @@ firebase.initializeApp(firebaseConfig);
 
 
 var myDBConn = firebase.database().ref('/contacts');
-myDBConn.on("child_added", tabulateData);
+//myDBConn.on("child_added", tabulateData);
 
 
 // define variables that reference elements on our page
@@ -32,39 +32,12 @@ const table = document.getElementById('contacts-table');
 // This function unpacks the data and builds the HTML to display the data on the page
 function tabulateData(data, prevChildKey) {
   console.log("tabulateData()!!!");
-  //console.log(this.responseText);
-  
-  //rowList.innerHTML = ''; // clear all the list items
-  
-  // parse our response to convert to JSON
-  //let members = JSON.parse(this.responseText);
 
-  //let index = 0;
-  // iterate through every row and add it to our page
-  //members.forEach( function(row) {
     
-    let tableRow = table.insertRow();
+  let tableRow = table.insertRow();
 
-    let cell0 = tableRow.insertCell(0);
-      var datapoint = data.val();
-    cell0.innerHTML = datapoint.email;
-
-//   }); 
-}
-
-function displayData(data, prevChildKey) {
-
+  let cell0 = tableRow.insertCell(0);
     var datapoint = data.val();
-  
-    const newListItem = document.createElement('li');
-    newListItem.innerHTML = datapoint.email;
-    
-    // the next line prevents the page from being refreshed
-    //event.preventDefault();   
+  cell0.innerHTML = datapoint.email;
 
-    const rowList = document.getElementById('rows');
-    rowList.appendChild(newListItem);  
-  
-  
-    //document.getElementById("results").value += datapoint.fname + "\t\t\t"+ datapoint.sname + "\n";
 }
