@@ -1,4 +1,4 @@
-// client-side js
+// contact1-show.js
 // retrieve the list of contacts from the database
 console.log('Client-side log for showing the contacts in a table');
 
