@@ -1,23 +1,6 @@
 console.log('Contacts log');
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC-NkVmpZwqRtQAo4U0z2-yrd8YnA3CcvQ",
-  authDomain: "pdst-nw5-demo-project.firebaseapp.com",
-  databaseURL: "https://pdst-nw5-demo-project-default-rtdb.firebaseio.com",
-  projectId: "pdst-nw5-demo-project",
-  storageBucket: "pdst-nw5-demo-project.appspot.com",
-  messagingSenderId: "112871842032",
-  appId: "1:112871842032:web:7c6db5b0e774a0c1e5e235"
-};
 
-// Initialize Firebase
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-
-var myDBConn = firebase.database().ref('/contacts');
-myDBConn.on("child_added", displayData);
 
 
 // Tell JavaScript to call saveContacts when SUBMIT button is clicked
