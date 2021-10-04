@@ -1,6 +1,6 @@
-# Hello Website (blank)
+# National Workshop 5
 
-This is a basic static HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen 🪄 immediately in the preview window. You can upload assets like images or audio in `assets` to the left. The rest is up to you and your imagination.
+This is a basic static HTML starter project you can build on during National Workshop 5
 
 ## What's in this project?
 
@@ -10,7 +10,9 @@ This is a basic static HTML starter project you can build on however you like. N
 
 ← `style.css`: CSS files add styling rules to your content.
 
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript.
+← `contact.html`: A skeleton Contact Us page
+
+← `contact.js`: JavaScript source used to interact with Firebase.
 
 ![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
 
