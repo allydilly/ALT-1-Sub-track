@@ -32,7 +32,7 @@ function saveContacts() {
   // define variables that reference elements on our page
   //const rowList = document.getElementById('rows');
   const emailField = document.getElementById("email");
-  const emailFieldValue = document.getElementById("email").value;
+  const emailFieldValue = emailField.value;
   console.log(emailFieldValue);
   
   // reset form 
