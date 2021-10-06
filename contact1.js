@@ -45,4 +45,9 @@ function saveContacts() {
 
 
 // TASK 5 (step 2): Include code to display the data here ..
+myDBCxn.on("child_added", displayData);
 
+function displayData(data, prevChildKey) {
+    const datapoint = data.val();
+    document.getElementById("contacts").value += datapoint.email + "\n";
+}
