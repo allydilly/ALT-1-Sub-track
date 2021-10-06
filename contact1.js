@@ -5,7 +5,7 @@ alert("Welcome to the Contact Us page");
 
 
 
-// TASK 2 (step 1): Include code to save the data here ..
+// TASK 2: Include code to save the data here ..
 
 
 
