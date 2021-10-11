@@ -8,11 +8,12 @@ alert("Welcome to the Contact Us page");
 
 
 
-
-
-// Task 2D - tell JavaScript to call saveContacts when SUBMIT button is clicked
-
+// Task 2D - Tell JavaScript to call saveContacts when SUBMIT button is clicked
 
 
 
+// Task 5B - Code to retrieve and display the data goes here ...
 
+
+
+// Task 5C - Code to retrieve and display the data in a list goes here ...
