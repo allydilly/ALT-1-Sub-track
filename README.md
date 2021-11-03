@@ -1,6 +1,9 @@
 # National Workshop 5
+This is a basic static HTML starter project you can build on during National Workshop 5 (for phase 2 LCCS teachers)
 
-This is a basic static HTML starter project you can build on during National Workshop 5
+## IMPORTANT!
+Please REMIX your own copy before making any changes
+(i.e. do not make any changes to this project)
 
 ## What's in this project?
 
