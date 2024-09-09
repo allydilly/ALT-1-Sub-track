@@ -15,6 +15,14 @@ const firebaseConfig = {
 
 
 // TASK 4C
+// Initialize Firebase 
+firebase.initializeApp(firebaseConfig); 
+
+ 
+
+// Retrieve the database handle 
+
+const myDBCxn = firebase.database().ref('/contacts'); 
 
 
 
@@ -23,7 +31,43 @@ const btn = document.getElementById("submit-data");
 
 btn.addEventListener("click", saveContacts); 
 
+ function saveContacts() { 
+
+  //alert("SUBMIT clicked!!!"); 
+
+   
+
+  // read the data from the email field 
+
+  const emailField = document.getElementById("email"); 
+
+  const emailFieldValue = emailField.value; 
+
+  alert(emailFieldValue) 
+
  
+
+  // reset form  
+
+  emailField.value = ''; // clear the field 
+
+  emailField.focus(); // set the focus 
+
+ 
+
+  // TASK 4D 
+
+  // code to save the data to Firebase GOES HERE! 
+
+  const data = myDBCxn.push(); 
+
+  data.set( {email: emailFieldValue 
+
+            }); 
+
+ 
+
+} // end saveContacts 
 
 // Submit clicked so post the data to the server 
 
@@ -33,42 +77,20 @@ btn.addEventListener("click", saveContacts);
   
   
   
-  
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyA3uzOEiSmHmSZ96xd2pDMDttMxuHezGBI",
-    authDomain: "contacts-database-b26e4.firebaseapp.com",
-    databaseURL: "https://contacts-database-b26e4-default-rtdb.firebaseio.com",
-    projectId: "contacts-database-b26e4",
-    storageBucket: "contacts-database-b26e4.appspot.com",
-    messagingSenderId: "717772121564",
-    appId: "1:717772121564:web:e4400e0dadf40a5b8f9b19",
-    measurementId: "G-NE88YCNMGR"
-  };
+// Task 5B - Code to retrieve and display the data goes here ... 
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-  const emailFieldValue = emailField.value; 
+myDBCxn.on("child_added", displayData); 
 
-  alert(emailFieldValue) 
-  
-  emailField.value = ''; // clear the field 
+ 
 
-  emailField.focus(); // set the focus 
-  
-} 
+function displayData(data, prevChildKey) { 
 
+    const datapoint = data.val(); 
 
-// Task 5B - Code to retrieve and display the data goes here ...
+    document.getElementById("contacts").value += datapoint.email + "\n"; 
+
+}
 
 
 
