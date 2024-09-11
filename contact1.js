@@ -1,4 +1,3 @@
-
 // alert("Welcome to the Contact Us page");
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -12,6 +11,7 @@ const firebaseConfig = {
   appId: "1:717772121564:web:e4400e0dadf40a5b8f9b19",
   measurementId: "G-NE88YCNMGR"
 };
+
 
 
 // TASK 4C
