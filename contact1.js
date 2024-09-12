@@ -9,119 +9,78 @@ const firebaseConfig = {
   storageBucket: "contacts-database-b26e4.appspot.com",
   messagingSenderId: "717772121564",
   appId: "1:717772121564:web:e4400e0dadf40a5b8f9b19",
-  measurementId: "G-NE88YCNMGR"
+  measurementId: "G-NE88YCNMGR",
 };
 
-
-
 // TASK 4C
-// Initialize Firebase 
-firebase.initializeApp(firebaseConfig); 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
- 
+// Retrieve the database handle
 
-// Retrieve the database handle 
-
-const myDBCxn = firebase.database().ref('/contacts'); 
-
-
+const myDBCxn = firebase.database().ref("/contacts");
 
 // Task 2D - Tell JavaScript to call saveContacts when SUBMIT button is clicked
-const btn = document.getElementById("submit-data"); 
+const btn = document.getElementById("submit-data");
 
-btn.addEventListener("click", saveContacts); 
+btn.addEventListener("click", saveContacts);
 
- function saveContacts() { 
+function saveContacts() {
+  //alert("SUBMIT clicked!!!");
 
-  //alert("SUBMIT clicked!!!"); 
+  // read the data from the email field
 
-   
+  const emailField = document.getElementById("email");
 
-  // read the data from the email field 
+  const emailFieldValue = emailField.value;
 
-  const emailField = document.getElementById("email"); 
+  alert(emailFieldValue);
 
-  const emailFieldValue = emailField.value; 
+  // reset form
 
-  alert(emailFieldValue) 
+  emailField.value = ""; // clear the field
 
- 
+  emailField.focus(); // set the focus
 
-  // reset form  
+  // TASK 4D
 
-  emailField.value = ''; // clear the field 
+  // code to save the data to Firebase GOES HERE!
 
-  emailField.focus(); // set the focus 
+  const data = myDBCxn.push();
 
- 
+  data.set({ email: emailFieldValue });
+} // end saveContacts
 
-  // TASK 4D 
+// Submit clicked so post the data to the server
 
-  // code to save the data to Firebase GOES HERE! 
+// Task 5B - Code to retrieve and display the data goes here ...
 
-  const data = myDBCxn.push(); 
+myDBCxn.on("child_added", displayData);
 
-  data.set( {email: emailFieldValue 
+function displayData(data, prevChildKey) {
+  const datapoint = data.val();
 
-            }); 
-
- 
-
-} // end saveContacts 
-
-// Submit clicked so post the data to the server 
-
-
-  
-  
-  
-  
-  
-
-// Task 5B - Code to retrieve and display the data goes here ... 
-
-myDBCxn.on("child_added", displayData); 
-
- 
-
-function displayData(data, prevChildKey) { 
-
-    const datapoint = data.val(); 
-
-    document.getElementById("contacts").value += datapoint.email + "\n"; 
-
+  document.getElementById("contacts").value += datapoint.email + "\n";
 }
 
-// Task 5C - Code to retrieve and display the data in a list goes here ... 
+// Task 5C - Code to retrieve and display the data in a list goes here ...
 
-myDBCxn.on("child_added", displayDataAsList); 
+myDBCxn.on("child_added", displayDataAsList);
 
- 
+// A handler to display the Firebase data as a list
 
-// A handler to display the Firebase data as a list 
+function displayDataAsList(data, prevChildKey) {
+  const datapoint = data.val();
 
-function displayDataAsList(data, prevChildKey) { 
+  // create a new list item element and set its value to the email address
 
- 
+  const newListItem = document.createElement("li");
 
-    const datapoint = data.val(); 
+  newListItem.innerHTML = datapoint.email;
 
-   
+  // append the above list item to the ordered list identified by rows
 
-    // create a new list item element and set its value to the email address 
+  const rowList = document.getElementById("rows");
 
-    const newListItem = document.createElement('li'); 
-
-    newListItem.innerHTML = datapoint.email; 
-
-  
-
-    // append the above list item to the ordered list identified by rows 
-
-    const rowList = document.getElementById('rows'); 
-
-    rowList.appendChild(newListItem);   
-
- 
-
+  rowList.appendChild(newListItem);
 }
