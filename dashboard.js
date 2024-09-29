@@ -1,4 +1,3 @@
-// Firebase configuration (Ensure you replace with your Firebase config)
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB8P-vC2cIrqIPYBqda0u-vVOCAF9mLcxc",
@@ -15,6 +14,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
+
+let totalWeeklyCost = 0;
+let subscriptions = [];
 
 // Get current logged-in user
 auth.onAuthStateChanged((user) => {
@@ -51,7 +53,7 @@ function addSubscription() {
       name: name,
       cost: cost,
       period: period,
-      weeklyCost: weeklyCost
+      weeklyCost: parseFloat(weeklyCost)
     };
 
     // Save subscription to Firestore
@@ -59,7 +61,8 @@ function addSubscription() {
       .add(subscription)
       .then(() => {
         alert("Subscription added!");
-        displaySubscription(subscription);  // Update the UI
+        subscriptions.push(subscription);
+        updateSubscriptionList();  // Update the UI
       })
       .catch((error) => {
         console.error("Error adding subscription: ", error);
@@ -69,31 +72,56 @@ function addSubscription() {
 
 // Load subscriptions from Firebase for the current user
 function loadSubscriptions(uid) {
-  const subscriptionList = document.getElementById('subscription-list');
-  subscriptionList.innerHTML = "";  // Clear current list
-
   db.collection('subscriptions').doc(uid).collection('userSubscriptions')
     .get()
     .then((querySnapshot) => {
+      subscriptions = [];
+      totalWeeklyCost = 0;
       querySnapshot.forEach((doc) => {
         const subscription = doc.data();
-        displaySubscription(subscription);
+        subscriptions.push(subscription);
       });
+      updateSubscriptionList();
     })
     .catch((error) => {
       console.error("Error loading subscriptions: ", error);
     });
 }
 
-// Display subscription in the list
-function displaySubscription(subscription) {
+// Display subscription in the list and calculate total weekly cost
+function updateSubscriptionList() {
   const subscriptionList = document.getElementById('subscription-list');
-  const listItem = document.createElement('li');
+  subscriptionList.innerHTML = "";  // Clear current list
+  totalWeeklyCost = 0;
 
-  listItem.innerHTML = `
-    ${subscription.name} - $${subscription.weeklyCost}/week
-    <span>(Original: $${subscription.cost} per ${subscription.period})</span>
-  `;
+  let maxWeeklyCost = 0;
+  let mostExpensiveSubscription = null;
 
-  subscriptionList.appendChild(listItem);
+  subscriptions.forEach(subscription => {
+    totalWeeklyCost += subscription.weeklyCost;
+
+    // Check if the current subscription is the most expensive
+    if (subscription.weeklyCost > maxWeeklyCost) {
+      maxWeeklyCost = subscription.weeklyCost;
+      mostExpensiveSubscription = subscription;
+    }
+  });
+
+  subscriptions.forEach(subscription => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      ${subscription.name} - £${subscription.weeklyCost}/week
+      <span>(Original: £${subscription.cost} per ${subscription.period})</span>
+    `;
+
+    // Highlight most expensive subscription in red
+    if (subscription === mostExpensiveSubscription) {
+      listItem.classList.add('most-expensive');
+    }
+
+    subscriptionList.appendChild(listItem);
+  });
+
+  // Update total weekly cost in the UI
+  document.getElementById('total-weekly-cost').innerText = `£${totalWeeklyCost.toFixed(2)}/week`;
 }
