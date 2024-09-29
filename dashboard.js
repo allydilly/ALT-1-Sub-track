@@ -76,7 +76,7 @@ function loadSubscriptions(uid) {
     .get()
     .then((querySnapshot) => {
       subscriptions = [];
-      totalWeeklyCost = 0;
+      totalWeeklyCost = 0;  // Reset total cost before recalculating
       querySnapshot.forEach((doc) => {
         const subscription = doc.data();
         subscriptions.push(subscription);
@@ -92,7 +92,7 @@ function loadSubscriptions(uid) {
 function updateSubscriptionList() {
   const subscriptionList = document.getElementById('subscription-list');
   subscriptionList.innerHTML = "";  // Clear current list
-  totalWeeklyCost = 0;
+  totalWeeklyCost = 0;  // Reset total weekly cost
 
   let maxWeeklyCost = 0;
   let mostExpensiveSubscription = null;
@@ -110,8 +110,8 @@ function updateSubscriptionList() {
   subscriptions.forEach(subscription => {
     const listItem = document.createElement('li');
     listItem.innerHTML = `
-      ${subscription.name} - £${subscription.weeklyCost}/week
-      <span>(Original: £${subscription.cost} per ${subscription.period})</span>
+      ${subscription.name} - €${subscription.weeklyCost}/week
+      <span>(Original: €${subscription.cost} per ${subscription.period})</span>
     `;
 
     // Highlight most expensive subscription in red
@@ -123,5 +123,5 @@ function updateSubscriptionList() {
   });
 
   // Update total weekly cost in the UI
-  document.getElementById('total-weekly-cost').innerText = `£${totalWeeklyCost.toFixed(2)}/week`;
+  document.getElementById('total-weekly-cost').innerText = `€${totalWeeklyCost.toFixed(2)}/week`;
 }
