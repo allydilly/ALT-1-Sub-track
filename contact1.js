@@ -1,15 +1,16 @@
 // alert("Welcome to the Contact Us page");
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyB8P-vC2cIrqIPYBqda0u-vVOCAF9mLcxc",
-    authDomain: "alt1-test-ceab3.firebaseapp.com",
-    projectId: "alt1-test-ceab3",
-    storageBucket: "alt1-test-ceab3.appspot.com",
-    messagingSenderId: "120760284874",
-    appId: "1:120760284874:web:6b7b33fd83db512d916633",
-    measurementId: "G-VVXRRX1566"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyB8P-vC2cIrqIPYBqda0u-vVOCAF9mLcxc",
+  authDomain: "alt1-test-ceab3.firebaseapp.com",
+  databaseURL: "https://alt1-test-ceab3-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "alt1-test-ceab3",
+  storageBucket: "alt1-test-ceab3.appspot.com",
+  messagingSenderId: "120760284874",
+  appId: "1:120760284874:web:6b7b33fd83db512d916633",
+  measurementId: "G-VVXRRX1566"
+};
 
 // TASK 4C
 // Initialize Firebase
