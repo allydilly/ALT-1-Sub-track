@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Subscription Dashboard</h1>
+    <div class="subscription-form">
+      <h2>Add a New Subscription</h2>
+      <input type="text" id="subscription-name" placeholder="Subscription Name">
+      <input type="number" id="subscription-cost" placeholder="Cost">
+      <select id="subscription-period">
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+      <button onclick="addSubscription()">Add Subscription</button>
+    </div>
+
+    <h2>Your Subscriptions</h2>
+    <ul id="subscription-list"></ul>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
