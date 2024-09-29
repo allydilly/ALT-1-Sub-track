@@ -1,12 +1,13 @@
 // Firebase configuration (Ensure you replace with your Firebase config)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyB8P-vC2cIrqIPYBqda0u-vVOCAF9mLcxc",
+  authDomain: "alt1-test-ceab3.firebaseapp.com",
+  databaseURL: "https://alt1-test-ceab3-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "alt1-test-ceab3",
+  storageBucket: "alt1-test-ceab3.appspot.com",
+  messagingSenderId: "120760284874",
+  appId: "1:120760284874:web:6b7b33fd83db512d916633",
+  measurementId: "G-VVXRRX1566"
 };
 
 // Initialize Firebase
