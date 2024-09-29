@@ -42,8 +42,12 @@ function login() {
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       alert('User logged in successfully!');
+      //redirects to homepage
+      window.location.href = "dashboard.html";
+
     })
     .catch((error) => {
+    //sends error as alert
       alert(error.message);
     });
 }
