@@ -1,16 +1,15 @@
 // alert("Welcome to the Contact Us page");
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyA3uzOEiSmHmSZ96xd2pDMDttMxuHezGBI",
-  authDomain: "contacts-database-b26e4.firebaseapp.com",
-  databaseURL: "https://contacts-database-b26e4-default-rtdb.firebaseio.com",
-  projectId: "contacts-database-b26e4",
-  storageBucket: "contacts-database-b26e4.appspot.com",
-  messagingSenderId: "717772121564",
-  appId: "1:717772121564:web:e4400e0dadf40a5b8f9b19",
-  measurementId: "G-NE88YCNMGR",
-};
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8P-vC2cIrqIPYBqda0u-vVOCAF9mLcxc",
+    authDomain: "alt1-test-ceab3.firebaseapp.com",
+    projectId: "alt1-test-ceab3",
+    storageBucket: "alt1-test-ceab3.appspot.com",
+    messagingSenderId: "120760284874",
+    appId: "1:120760284874:web:6b7b33fd83db512d916633",
+    measurementId: "G-VVXRRX1566"
+  };
 
 // TASK 4C
 // Initialize Firebase
