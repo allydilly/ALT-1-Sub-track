@@ -1,5 +1,6 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: bahnschrift, Helvetica, sans-serif;
+  scroll-behavior: smooth;
   background-color: #f2c2f2;
   display: flex;
   justify-content: center;
@@ -9,7 +10,7 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: #fecfff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -35,7 +36,7 @@ input, select {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #f4a8f5;
   color: white;
   border: none;
   border-radius: 5px;
