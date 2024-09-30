@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>"Sign Up and Log In</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-</head>
-<body>
-  <div class="container">
-    <div id="login-form" class="form">
-      <h2>Log In</h2>
-      <input type="email" id="login-email" placeholder="Email">
-      <input type="password" id="login-password" placeholder="Password">
-      <button onclick="login()">Log In</button>
-      <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alt 1</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+<body style="background-color:#f4a8f5;">
+    <header>
+        <nav>
+            <div class="nav-section">
+              <a href="Brief.html">Meeting the Brief</a>
+            </div>
+            <div class="nav-section">
+              <a href="Investigation.html">Investigation</a>
+            </div>
+            <div class="nav-section">
+              <a href="Plan.html">Plan</a>
+            </div>
+            <div class="nav-section">
+              <a href="Create.html">Create</a>
+            </div>
+            <div class="nav-section">
+              <a href="Testing.html">Testing</a>
+            </div>
+            <div class="nav-section">
+              <a href="Evaluation.html">Evaluation</a>
+            </div>
+            <div class="nav-section">
+              <a href="References.html">References</a>
+            </div>
+          </nav>
+    </header>
 
-    <div id="signup-form" class="form hidden">
-      <h2>Sign Up</h2>
-      <input type="email" id="signup-email" placeholder="Email">
-      <input type="password" id="signup-password" placeholder="Password">
-      <button onclick="signup()">Sign Up</button>
-      <p>Already have an account? <a href="#" onclick="toggleForms()">Log In</a></p>
-    </div>
+  <div style="display:flex;justify-content: center;align-items: center;flex-direction: column;flex-grow:1;gap: 2rem;">
+      <p style="font-size:2rem; font-weight:bold;">Landing Page</p>
+    <p>Alt Template</p>
   </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
